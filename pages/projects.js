@@ -11,7 +11,7 @@ const Projects = () => {
             <Heading mt={{ base: 4,md: 0}} as="h3" fontSize={20} mb={4}>
                 Projects
             </Heading>
-            <SimpleGrid columns={[1,1,2]} gap={6}>
+            <SimpleGrid columns={[1,1,1]} gap={6}>
                 <Section>
                     <ProjectGridItem id="ulteam" title="Ulteam" thumbnail={thumbUlteam}>
                         Webshop platform to buy games
