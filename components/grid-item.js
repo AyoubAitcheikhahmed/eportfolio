@@ -3,7 +3,8 @@ import Image from 'next/image'
 import { Box, Text, LinkBox, LinkOverlay } from '@chakra-ui/react'
 import { Global } from '@emotion/react'
 
-export const GridItem = ({children, href, title, thumbnail }) => {
+
+export const GridItem = ({children, href, title, thumbnail }) => (
     <Box w="100%" align="center"> 
         <LinkBox cursor="pointer">
             <Image 
@@ -12,41 +13,37 @@ export const GridItem = ({children, href, title, thumbnail }) => {
             className="grid-item-thumbnail"
             placeholder="blur"
             loading="lazy"
-            >
+            />
                 <LinkOverlay href={href} target="_blank">
-                    <Text mt={2} >
-                        {title}
-                    </Text>
+                    <Text mt={2}>{title}</Text>
                 </LinkOverlay>
-                <Text fontSize={15}>
-                    {children}
-                </Text>
-
-            </Image>
+                <Text fontSize={15}>{children}</Text>
         </LinkBox>
-    </Box>
-    
-}
+    </Box>  
+)
 
-export const ProjectGridItem = ({children, id, title,thumbnail}) => {
+export const ProjectGridItem = ({children, id, title,thumbnail}) => (
     <Box w="100%" align="center">
         <NextLink href={`/projects/${id}`}>
             <LinkBox cursor="pointer">
                 <Image src={thumbnail} alt={title} className="grid-item-thumbnail" placeholder='blur'/>
                     <LinkOverlay href={`/projects/${id}`} >
-                        <Text mt={2} fontSize={20}>
-                            {children}
+                        <Text mt={3} fontSize={20}>
+                            {title}
                         </Text>
                     </LinkOverlay>
+                    <Text fontSize={14} mb={5}>{children}</Text>
             </LinkBox>
         </NextLink>
     </Box>
-}
+)
 
 export const GridItemStyle = () => (
-    <Global styles={`
-    .grid-item-thumbnail {
-        border-radius: 12px;
-        
-    }`}
-)
+    <Global
+      styles={`
+        .grid-item-thumbnail {
+          border-radius: 12px;
+        }
+      `}
+    />
+  )
