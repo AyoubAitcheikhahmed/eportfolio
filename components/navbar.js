@@ -54,7 +54,7 @@ const Navbar = props => {
         wrap="wrap" 
         align="center" 
         justify="space-between">
-            <Flex align="center" mr={5}>
+            <Flex align="center" mr={5} mt={{ base: 4,md: 0}}>
                 <Heading as="h1" size="lg" letterSpacing={'tight'}>
                     <Logo />
                 </Heading>
@@ -73,7 +73,7 @@ const Navbar = props => {
                     Posts
                 </LinkItem>
             </Stack>
-            <Box flex={1} align="center">
+            <Box flex={1} align="center" mt={{ base: 4,md: 0}}>
                 <ThemeToggleButton />
                 <Box ml={2} display={{ base: 'inline-block', md:'none'}}>
                     <Menu>

@@ -48,7 +48,7 @@ const  Page = () => {
             </Paragraph>
             <Box
             align="center" my={4}>
-            <Button leftIcon={<AtSignIcon />} colorScheme="teal">
+            <Button href="/projects" leftIcon={<AtSignIcon />} colorScheme="teal">
                 Check out my Portfolio
             </Button>
             </Box>
