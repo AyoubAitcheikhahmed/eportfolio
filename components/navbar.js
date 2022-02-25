@@ -66,11 +66,12 @@ const Navbar = props => {
             alignItems="center"
             flexGrow={1}
             mt={{ base: 4,md: 0}} >
-                <LinkItem href="/projects" path={path}>
-                    Projects
-                </LinkItem>
+
                 <LinkItem href="/posts" path={path}>
                     Posts
+                </LinkItem>
+                <LinkItem href="/projects"  >
+                    Projects
                 </LinkItem>
             </Stack>
             <Box flex={1} align="center" mt={{ base: 4,md: 0}}>
