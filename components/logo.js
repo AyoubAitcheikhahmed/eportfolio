@@ -11,10 +11,7 @@ const LogoBox = styled.span`
     height: 30px;
     line-height: 20px;
     padding: 10px;
-    
-    &:hover img {
-        setAttribute('src', '/images/panther_navbar_2.gif');
-    }
+    margin-top: 4px;
 `
 
   
@@ -35,7 +32,7 @@ const Logo = () => {
                     onMouseOver={e => (e.currentTarget.src = pantherAttack)}
                     onMouseOut={e => (e.currentTarget.src = pantherIdle)}
                     />
-                    <Text color={useColorModeValue('gray.800','whiteAlpha.900')} fontFamily='M PLUS Rounded 1c' fontWeight="bold" ml={3}>
+                    <Text color={useColorModeValue('gray.800','whiteAlpha.900')} fontFamily='M PLUS Rounded 1c' fontWeight="bold" ml={3} >
                         Ayoub Aitcheikhahmed
                     </Text>
                 </LogoBox>

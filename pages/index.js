@@ -5,7 +5,7 @@ import Paragraph from "../components/paragraph"
 import { AtSignIcon } from "@chakra-ui/icons"
 import { BioSection,BioYear, WorkDetails,CompanyDetails,WorkTasks} from "../components/bio"
 import panther from "../public/images/panther_walk.gif"
-
+import NextLink from 'next/link'
 const  Page = () => {
     const panther = "images/panther_navbar_2.gif";
     const pantherIdle = `/images/panther_navbar_1.gif`
@@ -13,11 +13,8 @@ const  Page = () => {
 
     return (
     <Container>
-        <Box borderRadius="lg" w="100%" align="center">
-        
 
-        </Box>
-        <Box borderRadius="lg" bg={useColorModeValue('whiteAlpha.500','whiteAlpha.200')} p={4} mb={6} mt={6} align="center">
+        <Box borderRadius="lg"  bg={useColorModeValue('whiteAlpha.500','whiteAlpha.200')} p={4} mb={6} mt={20} align="center">
             Hello, I&apos;m a Computer Science student based in Belgium!
         </Box>
         <Box display={{md:'flex'}}>
@@ -58,9 +55,11 @@ const  Page = () => {
             </Paragraph>
             <Box
             align="center" my={4}>
+            <NextLink href="/projects" passHref>
             <Button href="/projects" leftIcon={<AtSignIcon />} colorScheme="teal">
                 Check out my Portfolio
             </Button>
+            </NextLink>
             </Box>
         </Section>
         <Section delay={0.3}>

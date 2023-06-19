@@ -62,7 +62,6 @@ const Navbar = props => {
             <Stack 
             direction={{base: 'column', md: 'row'}}
             display={{base: 'none', md: 'flex'}}
-            display={{base: 'full', md: 'auto'}}
             alignItems="center"
             flexGrow={1}
             mt={{ base: 4,md: 0}} >
@@ -74,9 +73,10 @@ const Navbar = props => {
                     Projects
                 </LinkItem>
             </Stack>
-            <Box flex={1} align="center" mt={{ base: 4,md: 0}}>
+            <Box flex={1} align="center" display={{ base: 'none', md: 'inline-block' }} mt={{ base: 4,md: 0}}>
                 <ThemeToggleButton />
-                <Box ml={2} display={{ base: 'inline-block', md:'none'}}>
+                </Box>
+                <Box ml={2} isplay={{ base: 'none', md: 'inline-block' }}>
                     <Menu>
                         <MenuButton as={IconButton} icon={<HamburgerIcon />} variant="outline" aria-label="Options" />
                         <MenuList>
@@ -104,7 +104,7 @@ const Navbar = props => {
 
                     </Menu>
                 </Box>
-            </Box>
+
         </Container>
     </Box>
   )
