@@ -14,7 +14,7 @@ const  Page = () => {
     return (
     <Container>
         <Box borderRadius="lg" w="100%" align="center">
-        // was for a navbar animation but it's too heavy
+        
 
         </Box>
         <Box borderRadius="lg" bg={useColorModeValue('whiteAlpha.500','whiteAlpha.200')} p={4} mb={6} mt={6} align="center">
