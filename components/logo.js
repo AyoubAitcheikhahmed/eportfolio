@@ -7,7 +7,8 @@ const LogoBox = styled.span`
     font-weight: bold;
     font-size: 18px;
     display: inline-flex;
-    align-items: center;
+    
+    align-items: flex-end;
     height: 30px;
     line-height: 20px;
     padding: 10px;
@@ -32,7 +33,7 @@ const Logo = () => {
                     onMouseOver={e => (e.currentTarget.src = pantherAttack)}
                     onMouseOut={e => (e.currentTarget.src = pantherIdle)}
                     />
-                    <Text color={useColorModeValue('gray.800','whiteAlpha.900')} fontFamily='M PLUS Rounded 1c' fontWeight="bold" ml={3} >
+                    <Text color={useColorModeValue('gray.800','whiteAlpha.900')} fontFamily='M PLUS Rounded 1c' fontWeight="bold" ml={3} boxSizing="" >
                         Ayoub Aitcheikhahmed
                     </Text>
                 </LogoBox>

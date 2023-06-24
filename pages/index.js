@@ -19,7 +19,7 @@ const  Page = () => {
         </Box>
         <Box display={{md:'flex'}}>
             <Box flexGrow={1}>
-                <Heading as="h2" variant="page-title">
+                <Heading  as="h2" variant="page-title">
                     Ayoub Aitcheikhahmed
                 </Heading>
                 <p>Pixelart, Computer science, games</p>
