@@ -30,7 +30,7 @@ const EntryPage = ({ meta, source, basePath, showDate }) => (
     </Section>
     <Section delay={0.1}>
       {meta.cover && <Image src={meta.cover} alt={meta.title} borderRadius='xl' boxShadow='xl' maxW='100%' mb={6} />}
-      {meta.description && <Text mb={4}>{meta.description}</Text>}
+      {meta.description && <Text mb={4} fontStyle="italic">{meta.description}</Text>}
       {meta.link && (
         <Button as='a' href={meta.link} target='_blank' rel='noopener noreferrer' rightIcon={<ExternalLinkIcon />} colorScheme='teal' mb={4}>
           View project
