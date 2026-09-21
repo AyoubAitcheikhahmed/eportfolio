@@ -1,0 +1,126 @@
+{
+  "profile": "As a motivated Java developer, I bring a strong drive and passion for software development. My critical thinking skills enable me to effectively analyse and solve technical challenges. With experience in Java and frameworks like Spring Boot, I have demonstrated my ability to tackle problems and implement valuable solutions. My enthusiasm for technology and eagerness to learn make me an excellent addition to your team, ready to contribute to successful projects and continuous improvements.",
+  "education": [
+    { "year": "2025", "text": "Spring Professional Developer certification (VMware)." },
+    { "year": "2024", "text": "Graduated in Applied Computer Science (Toegepaste Informatica) at HoGent, 2019 - 2024." },
+    { "year": "2021", "text": "Completed Dutch as a second language at Ghent University (UGent)." }
+  ],
+  "skills": [
+    { "name": "Programming languages", "items": "Java, Kotlin, JavaScript, PHP, SQL, HTML, CSS, Python" },
+    { "name": "Frameworks", "items": "Spring Boot, Quarkus, Node.js, Express, React, Angular, Apache Camel, OAuth2" },
+    { "name": "Cloud and tools", "items": "AWS, Kubernetes, Docker, Terraform, GitHub, GitLab, CI/CD" },
+    { "name": "Databases", "items": "MongoDB, SQL" },
+    { "name": "Methodologies", "items": "REST, SOAP, Agile / Scrum" }
+  ],
+  "languages": "Arabic, French, English, Dutch",
+  "work": [
+    {
+      "employer": "Sopra Steria",
+      "role": "Java developer / AI Engineer",
+      "context": "Client assignment",
+      "period": "May 2026 - Sep 2026",
+      "bullets": [
+        "Designed and built an agentic AI pipeline (Classifier, Extractor, Suggester) that classifies scanned healthcare reimbursement files, extracts the relevant data and generates reimbursement proposals, keeping a human in the loop for critical decisions.",
+        "Built with LangChain4j on Quarkus, MCP for tool orchestration and Claude models via AWS Bedrock.",
+        "Delivered test datasets (60 scenarios across 20 care domains) and a reporting tool with confidence-based colour coding for validation."
+      ]
+    },
+    {
+      "employer": "Sopra Steria",
+      "role": "Java developer",
+      "context": "Client assignment",
+      "period": "Oct 2025 - Apr 2026",
+      "bullets": [
+        "Developed an MCP server and its client with Quarkus and React.",
+        "Set up and managed CI/CD pipelines with GitLab, Jenkins and ArgoCD on OpenShift.",
+        "Secured the server with per-tool permissions and guardrails for controlled access to the MCP tools."
+      ]
+    },
+    {
+      "employer": "Sopra Steria",
+      "role": "Java developer",
+      "context": "Client assignment",
+      "period": "Apr 2025 - Jun 2025",
+      "bullets": [
+        "Fixed message loss caused by early JMS acknowledgment, tracing it to concurrent threads, and worked on backpressure throttling.",
+        "Analysed Camel routes, tuned the JMS configuration and added CPU, queue size and JVM metrics with Spring Boot Actuator for better observability."
+      ]
+    },
+    {
+      "employer": "Sopra Steria",
+      "role": "Java developer",
+      "context": "Client assignment",
+      "period": "Nov 2024 - May 2025",
+      "bullets": [
+        "Migrated the codebase to GitLab and rebuilt the CI/CD pipelines with a cleaner structure and a more secure approach."
+      ]
+    },
+    {
+      "employer": "Sopra Steria",
+      "role": "Java developer",
+      "context": "Internal project",
+      "period": "Sep 2024 - Nov 2024",
+      "bullets": [
+        "Refactored the codebase for maintainability, readability and performance, and delivered new features.",
+        "Managed database migrations and improved the responsive front-end, leaving a clean foundation for the next team."
+      ]
+    },
+    {
+      "employer": "Sopra Steria",
+      "role": "Junior Java developer (Intern)",
+      "context": "Internship projects",
+      "period": "Feb 2024 - May 2024",
+      "bullets": [
+        "What'sCooking: an AI-powered browser extension that recommends recipes from shopping cart contents and dietary preferences. Deployed on AWS with infrastructure as code (ECR, App Runner, API Gateway, DynamoDB) and Titan and OpenAI models.",
+        "Meeting notes summariser: turns an audio recording into a summary sent by email, using AWS Transcribe, Bedrock, Lambda and SNS, with Terraform and a CI/CD pipeline."
+      ]
+    },
+    {
+      "employer": "Triple A solutions",
+      "role": "PHP developer",
+      "context": "Client assignment",
+      "period": "Jul 2023 - Oct 2023",
+      "bullets": [
+        "Maintained and extended a large PHP application supporting business-critical financial processes.",
+        "Refactored code, fixed recurring bugs and optimised database queries, cutting load times by up to 30%."
+      ]
+    },
+    {
+      "employer": "Fluwsy",
+      "role": "Full-stack developer",
+      "period": "Mar 2018 - Jun 2023",
+      "bullets": [
+        "Designed and built a restaurant reservation system from scratch with Node.js, Express, MongoDB and React: APIs for reservations, tables, zones, users and feedback, admin dashboards and custom planning tables.",
+        "Hosted on AWS with SES emails for reservation confirmations. Restaurants gained full control over bookings and double bookings dropped."
+      ]
+    },
+    {
+      "employer": "Bollaert",
+      "role": "WordPress developer",
+      "period": "May 2021 - Aug 2022",
+      "bullets": [
+        "Content management, webshop maintenance, SEO, user support, design and customisation, resulting in a better search ranking and a smoother webshop."
+      ]
+    },
+    {
+      "employer": "Foodipro",
+      "role": "Software developer",
+      "context": "Agadir, Morocco",
+      "period": "Feb 2017 - Jul 2018",
+      "bullets": [
+        "Managed the internal network and built a management solution with PHP, MySQL and Bootstrap.",
+        "Improved user authentication and data security, helped colleagues with IT issues, and designed banners, flyers and business cards."
+      ]
+    },
+    {
+      "employer": "ProBun's",
+      "role": "PHP software developer / IT helpdesk",
+      "context": "Agadir, Morocco",
+      "period": "Mar 2016 - Dec 2016",
+      "bullets": [
+        "Built a VBA tool that manages daily income and shows it in graphs, saving the accountant 30% of their time.",
+        "Set up and maintained hardware, networks and systems, designed delivery vehicle lettering, and built the probuns.ma website with WordPress."
+      ]
+    }
+  ]
+}

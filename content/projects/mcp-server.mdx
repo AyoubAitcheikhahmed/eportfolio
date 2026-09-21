@@ -1,0 +1,19 @@
+---
+title: "Secure MCP server"
+description: "A Model Context Protocol server and client with per-tool permissions and guardrails, deployed on OpenShift."
+date: "2026-04-01"
+tags: ["Java", "Quarkus", "React", "MCP", "OpenShift"]
+draft: false
+---
+
+## Context
+
+A client needed a Model Context Protocol (MCP) server in a cloud-native setup, with both back-end and front-end work and secure deployments on OpenShift.
+
+## What I built
+
+- An MCP server and matching client, using Quarkus for the back end and React for the front end.
+- CI/CD pipelines with GitLab, Jenkins and ArgoCD on OpenShift.
+- A permission system per tool, plus guardrails so access to the MCP tools stays controlled and secure.
+
+The result is a fully operational, secure server with an integrated client, deployed through automated pipelines.

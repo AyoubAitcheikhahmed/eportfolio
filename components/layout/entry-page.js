@@ -1,4 +1,5 @@
-import { Container, Heading, Text } from '@chakra-ui/react'
+import { Button, Container, Heading, Image, Text } from '@chakra-ui/react'
+import { ExternalLinkIcon } from '@chakra-ui/icons'
 import { MDXRemote } from 'next-mdx-remote'
 import Section from '../ui/section'
 import Tag from '../ui/tag'
@@ -28,6 +29,13 @@ const EntryPage = ({ meta, source, basePath, showDate }) => (
       ))}
     </Section>
     <Section delay={0.1}>
+      {meta.cover && <Image src={meta.cover} alt={meta.title} borderRadius='lg' maxW='100%' mb={4} />}
+      {meta.description && <Text mb={4}>{meta.description}</Text>}
+      {meta.link && (
+        <Button as='a' href={meta.link} target='_blank' rel='noopener noreferrer' rightIcon={<ExternalLinkIcon />} colorScheme='teal' mb={4}>
+          View project
+        </Button>
+      )}
       <MDXRemote {...source} components={components} />
     </Section>
   </Container>

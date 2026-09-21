@@ -35,6 +35,7 @@ Files starting with `_` (the templates) are ignored.
    | `tags`        | Array of strings.                                                     |
    | `draft`       | `true` or `false`, see [Drafts](#drafts).                             |
    | `cover`       | Optional image path, used for listings and social previews.           |
+   | `link`        | Optional (projects): external URL shown as a "View project" button.   |
 
 3. Write the post in Markdown (GFM tables and task lists and syntax-highlighted code blocks work).
 4. Commit and push. Reading time is computed automatically, the sitemap and RSS feed are regenerated on build.

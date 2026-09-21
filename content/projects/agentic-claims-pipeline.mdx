@@ -1,0 +1,19 @@
+---
+title: "Agentic AI claims pipeline"
+description: "A multi-agent pipeline that classifies scanned healthcare reimbursement files, extracts the data and suggests reimbursements, with a human in the loop."
+date: "2026-09-01"
+tags: ["AI", "Java", "Quarkus", "LangChain4j", "AWS Bedrock"]
+draft: false
+---
+
+## Context
+
+For a client, healthcare reimbursement files were processed mostly by hand from scanned documents. That was slow and error-prone when classifying documents and extracting data.
+
+## What I built
+
+An agentic AI pipeline with three agents: a **Classifier**, an **Extractor** and a **Suggester**. Together they classify each file, extract the relevant data and generate a reimbursement proposal. A human still validates the critical decisions.
+
+- LangChain4j on Quarkus, MCP for tool orchestration, Claude models through AWS Bedrock.
+- Test datasets: 60 scenarios across 20 care domains.
+- A reporting tool with confidence-based colour coding to validate results.
