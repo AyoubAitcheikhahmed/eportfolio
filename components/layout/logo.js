@@ -32,8 +32,8 @@ const Logo = () => {
                     onMouseOver={e => (e.currentTarget.src = pantherAttack)}
                     onMouseOut={e => (e.currentTarget.src = pantherIdle)}
                     />
-                    <Text color={useColorModeValue('gray.800','whiteAlpha.900')} fontFamily='M PLUS Rounded 1c' fontWeight="bold" ml={3} boxSizing="" >
-                        Ayoub Aitcheikhahmed
+                    <Text color={useColorModeValue('gray.800','whiteAlpha.900')} fontFamily='M PLUS Rounded 1c' fontWeight="bold" ml={3} whiteSpace="nowrap" >
+                        Home
                     </Text>
                 </LogoBox>
             </a>

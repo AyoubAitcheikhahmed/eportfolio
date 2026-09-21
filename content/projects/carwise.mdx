@@ -1,0 +1,112 @@
+---
+title: "CarWise"
+description: "A multi-tenant SaaS for car rental agencies in Morocco: fleet, reservations, digital contracts, live GPS tracking and AI document scanning in one dashboard."
+date: "2026-09-15"
+tags: ["NestJS", "MongoDB", "React", "AWS", "GPS", "AI", "Terraform"]
+draft: false
+cover: "/images/projects/carwise/cover.png"
+link: "https://carwise.ma"
+---
+
+## Overview
+
+CarWise lets a rental agency run its whole business from one dashboard: fleet, customers, reservations, contracts, expenses and live vehicle tracking. It is built for the Moroccan market, so the app defaults to French, formats prices in MAD, and the marketing site is available in French and Arabic.
+
+I built and run all of it: the API, the dashboard, the marketing site and the infrastructure.
+
+## Features
+
+- **Fleet management:** vehicles with status (available, reserved, rented, maintenance, sold), photos and features, plus a maintenance history with configurable service types.
+- **Reservations and calendar:** a booking calendar where reservations are created, edited and turned into contracts.
+- **Digital contracts:** PDF contracts generated per agency, with a client signature drawn on screen, an agency signature and editable legal clauses per language (French and English, translated with AI on demand).
+- **Vehicle damage report:** click on a car diagram to place numbered damage markers, saved on the vehicle and on each contract, and printed as the last page of the contract PDF.
+- **AI scanning:** upload a photo of a vehicle registration, an ID or licence, a traffic fine or a receipt and Claude returns the structured fields, ready to review and save.
+- **Expenses and fines:** expense tracking across 19 categories, and traffic fines that are matched to the customer who had the vehicle.
+- **Statistics:** a dashboard with aggregate figures for the agency.
+- **Live GPS tracking:** see the whole fleet on a map, with speed and geofence alerts (details below).
+
+## GPS tracking
+
+Each vehicle carries a physical tracker. Trackers talk raw binary protocols (JT808 and GT06) over a persistent TCP connection, so I run a [Traccar](https://www.traccar.org) server to decode them and forward every position to the API.
+
+```text
+GPS tracker (JT808 / GT06, raw TCP)
+        |
+        v
+Traccar (decodes frames, JVM service)
+        |  HTTP POST per position, shared-secret header
+        v
+CarWise API  /api/gps/traccar
+        |  token guard + rate limit (per device)
+        v
+   in parallel:
+     - store location point       (MongoDB Atlas)
+     - mark the device online
+     - evaluate alerts (speed, geofence)
+        |
+        v
+   alert created once, resolved when back to normal
+        |
+        v
+   WhatsApp notification
+```
+
+What this gives an agency:
+
+- A live fleet map and the track history of each vehicle.
+- **Speed alerts** when a vehicle goes over a configurable threshold (default 120 km/h).
+- **Geofences:** an alert when a vehicle leaves a zone it is allowed in.
+- **Offline detection** when a device stays silent for too long.
+- Alerts are deduplicated, so a vehicle that stays outside a zone raises one alert, not one per ping.
+
+Design choices behind it:
+
+- The webhook is authenticated with a shared secret, and rate-limited **per device serial number**, not per IP. Every device arrives through Traccar's local address, so limiting by IP would put the whole fleet in one bucket.
+- Geofences are cached in memory for 30 seconds instead of being read from the database on every ping.
+- Independent steps of each ping (store, mark online, evaluate alerts) run in parallel, which took a request from roughly 350 ms to roughly 100 ms.
+- Traccar retries failed forwards, so a short API restart does not lose positions.
+
+## Architecture
+
+```text
+  Agency staff                    Visitors
+       |                              |
+       v                              v
+  Dashboard (React)            Marketing site (React)
+  AWS Amplify                  AWS Amplify, carwise.ma
+       |
+       | HTTPS
+       v
+  +---------------- AWS Lightsail instance ----------------+
+  |  nginx  ->  CarWise API (NestJS, Docker)               |
+  |             Traccar GPS server (JVM)  <- trackers      |
+  +-------------------------+------------------------------+
+                            |
+             +--------------+---------------+
+             v              v               v
+      MongoDB Atlas     Amazon S3      Anthropic Claude
+      (data)            (files, PDFs)  (document scan, translation)
+```
+
+- **Infrastructure as code:** the Lightsail instance, static IP, firewall (HTTP, HTTPS and the two GPS ports) and key pair are defined in Terraform.
+- **CI/CD:** a GitHub Actions workflow runs the tests, builds the Docker image, copies it to the instance and redeploys.
+- **Storage:** S3 in production, the local disk in development and tests, picked automatically from the environment.
+- **Load testing:** I ran k6 scenarios against production before the pilot, including a scenario that hammers contract PDF generation, to find the real bottleneck before customers did.
+
+## Engineering notes
+
+- **Multi-tenancy:** every record belongs to a rental company, and every query is scoped by the company found in the caller's JWT, never a client-supplied ID.
+- **PDF generation in worker threads:** building a contract PDF is CPU-bound and synchronous, so it runs in a worker pool and never blocks the API's event loop. The generated PDF is cached, and the cache is invalidated whenever the data it shows changes. A signed PDF is never touched, since it is a legal record.
+- **AI cost control:** every Claude call is rate-limited and logged with its token usage, so cost stays visible.
+- **Fail-fast configuration:** environment variables are validated at startup, so a missing secret stops the deploy instead of failing later in production.
+
+## Stack
+
+| Area | Technology |
+| ---- | ---------- |
+| API | NestJS 11, Prisma 6, JWT auth (access and refresh tokens), class-validator |
+| Database | MongoDB Atlas |
+| Dashboard | React 18, Vite, MUI, Redux Toolkit, Formik, FullCalendar, react-intl |
+| GPS | Traccar, JT808 and GT06 trackers |
+| AI | Anthropic Claude (vision extraction and translation) |
+| Cloud | AWS Lightsail, S3, Amplify, Terraform, Docker, GitHub Actions |

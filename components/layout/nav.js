@@ -8,24 +8,42 @@ import {
     Stack,
     Heading,
     Flex,
+    Menu,
+    MenuButton,
+    MenuItem,
+    MenuList,
+    IconButton,
     useColorModeValue
 } from '@chakra-ui/react'
+import { HamburgerIcon } from '@chakra-ui/icons'
 import  ThemeToggleButton  from './theme-toggle-button'
 
-const LinkItem = ({ href,path , children}) => {
-    const active = path === href || path.startsWith(href + '/')
-    const inactiveColor = useColorModeValue('gray200','whiteAlpha.900')
+const links = [
+    { href: '/blog', label: 'Blog' },
+    { href: '/projects', label: 'Projects' },
+    { href: '/contact', label: 'Contact' }
+]
+
+const isActive = (path, href) => path === href || path.startsWith(href + '/')
+
+// Button-like link: no underline, background on hover.
+const LinkItem = ({ href, path, children }) => {
+    const active = isActive(path, href)
+    const hoverBg = useColorModeValue('blackAlpha.100', 'whiteAlpha.200')
+    const inactiveColor = useColorModeValue('gray.800', 'whiteAlpha.900')
 
     return (
-        <NextLink href={href}>
+        <NextLink href={href} passHref>
             <Link
-            p={2}
+            px={3}
+            py={2}
+            borderRadius="md"
             fontSize="lg"
-            bg={active ? 'glassTeal' : undefined}
-            color={active ? '#202023' : inactiveColor} >
+            bg={active ? 'teal.300' : undefined}
+            color={active ? '#202023' : inactiveColor}
+            _hover={{ textDecoration: 'none', bg: active ? 'teal.300' : hoverBg }} >
                 {children}
             </Link>
-
         </NextLink>
     )
 }
@@ -45,37 +63,44 @@ const Navbar = props => {
         <Container
         boxSizing="inherit"
         display="flex" 
-        flexWrap="wrap"
         p={2} 
         maxW="container.md" 
-        wrap="wrap" 
         align="center"
         alignItems="center"
         justify="space-between">
-            <Flex centeralign="center" mr={5} mt={{ base: 4,md: 0}} align>
+            <Flex centeralign="center" mr={5} align="center">
                 <Heading alignItems="flex-end" as="h1" size="lg" letterSpacing={'tight'}>
                     <Logo />
                 </Heading>
             </Flex>
             <Stack
             direction="row"
+            display={{ base: 'none', md: 'flex' }}
             alignItems="center"
-            flexGrow={1}
-            flexWrap="wrap"
-            mt={{ base: 4,md: 0}} >
-                <LinkItem href="/blog" path={path}>
-                    Blog
-                </LinkItem>
-                <LinkItem href="/projects" path={path}>
-                    Projects
-                </LinkItem>
-                <LinkItem href="/contact" path={path}>
-                    Contact
-                </LinkItem>
+            flexGrow={1} >
+                {links.map(l => (
+                    <LinkItem key={l.href} href={l.href} path={path}>
+                        {l.label}
+                    </LinkItem>
+                ))}
             </Stack>
-            <Box mt={{ base: 4,md: 0}}>
+            <Flex alignItems="center" ml={{ base: 'auto', md: 0 }}>
                 <ThemeToggleButton />
-            </Box>
+                <Box ml={2} display={{ base: 'block', md: 'none' }}>
+                    <Menu>
+                        <MenuButton as={IconButton} icon={<HamburgerIcon />} variant="outline" size="lg" aria-label="Menu" />
+                        <MenuList>
+                            {links.map(l => (
+                                <NextLink key={l.href} href={l.href} passHref>
+                                    <MenuItem as={Link} _hover={{ textDecoration: 'none' }} fontWeight={isActive(path, l.href) ? 'bold' : 'normal'}>
+                                        {l.label}
+                                    </MenuItem>
+                                </NextLink>
+                            ))}
+                        </MenuList>
+                    </Menu>
+                </Box>
+            </Flex>
         </Container>
     </Box>
   )
