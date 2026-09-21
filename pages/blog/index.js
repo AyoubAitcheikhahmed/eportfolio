@@ -13,7 +13,7 @@ const Blog = ({ entries }) => (
     <SimpleGrid columns={[1, 1, 1]} gap={6}>
       {entries.map(e => (
         <Section key={e.slug}>
-          <Card href={`/blog/${e.slug}`} title={e.draft ? `${e.title} (draft)` : e.title} cover={e.cover} meta={`${e.date} · ${e.readingTime} min read`}>
+          <Card href={`/blog/${e.slug}`} title={e.title} cover={e.cover} meta={`${e.date} · ${e.readingTime} min read`}>
             {e.description}
           </Card>
         </Section>

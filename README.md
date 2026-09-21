@@ -68,7 +68,7 @@ To add your own:
 
 ### Drafts
 
-`draft: true` posts and projects show up in `npm run dev` (marked "(draft)") but are excluded from production builds:
+`draft: true` posts and projects show up in `npm run dev` but are excluded from production builds:
 no page, no listing entry, no sitemap or RSS entry. Set `draft: false` (or remove the file) when you're ready to publish.
 
 ### New content section

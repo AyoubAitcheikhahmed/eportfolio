@@ -19,7 +19,6 @@ const EntryPage = ({ meta, source, basePath, showDate }) => (
     <Section>
       <Heading as="h1" fontSize={34} mb={2}>
         {meta.title}
-        {meta.draft && ' (draft)'}
       </Heading>
       <Text fontSize={16} mb={4} opacity={0.8}>
         {showDate && `${meta.date} · ${meta.readingTime} min read`}
