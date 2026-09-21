@@ -111,15 +111,6 @@ const  Page = () => {
             </BioSection>
         </Section>
 
-        <Section delay={0.3}>
-            <Heading as="h3" variant="section-title">
-                I ❤️
-            </Heading>
-            <Paragraph>
-                Coding, Game development, Pixelart, Playing Banjo, Painting,
-                Machine Learning, Robotics, Arduino
-            </Paragraph>
-        </Section>
 
     </Container>
     )
