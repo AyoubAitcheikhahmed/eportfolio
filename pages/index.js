@@ -11,7 +11,7 @@ const  Page = () => {
     return (
     <Container>
 
-        <Box borderRadius="lg"  bg={useColorModeValue('whiteAlpha.500','whiteAlpha.200')} p={4} mb={6} mt={20} align="center">
+        <Box borderRadius="lg"  bg={useColorModeValue('whiteAlpha.500','whiteAlpha.200')} p={4} mb={6} mt={{ base: 8, md: 20 }} align="center">
             Hello, I&apos;m a Java developer based in Antwerp, Belgium!
         </Box>
         <Box display={{md:'flex'}}>

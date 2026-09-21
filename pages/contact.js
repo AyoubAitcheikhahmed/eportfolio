@@ -12,7 +12,7 @@ const links = [
 const Contact = () => (
   <Container>
     <Seo title="Contact" description="Get in touch with Ayoub Aitcheikhahmed" path="/contact" />
-    <Heading mt={{ base: 4, md: 0 }} as="h3" fontSize={20} mb={4}>
+    <Heading mt={{ base: 4, md: 0 }} as="h3" fontSize={24} mb={4}>
       Contact
     </Heading>
     <Section>

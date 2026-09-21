@@ -8,12 +8,12 @@ const Card = ({ href, title, cover, children }) => (
       {cover && <Image src={cover} alt={title} maxW="100%" loading="lazy" />}
       <NextLink href={href} passHref>
         <LinkOverlay>
-          <Text mt={3} fontSize={20}>
+          <Text mt={3} fontSize={24}>
             {title}
           </Text>
         </LinkOverlay>
       </NextLink>
-      <Text fontSize={14} mb={5}>
+      <Text fontSize={16} mb={5}>
         {children}
       </Text>
     </LinkBox>

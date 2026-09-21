@@ -4,11 +4,11 @@ import styled from '@emotion/styled'
 
 const LogoBox = styled.span`
     font-weight: bold;
-    font-size: 18px;
+    font-size: 20px;
     display: inline-flex;
     
     align-items: flex-end;
-    height: 30px;
+    height: 36px;
     line-height: 20px;
     padding: 10px;
     margin-top: 4px;
@@ -26,8 +26,8 @@ const Logo = () => {
                 <LogoBox>
                     <img 
                     src={pantherIdle} 
-                    width={80} 
-                    height={40} 
+                    width={96} 
+                    height={48} 
                     alt="logo" 
                     onMouseOver={e => (e.currentTarget.src = pantherAttack)}
                     onMouseOut={e => (e.currentTarget.src = pantherIdle)}

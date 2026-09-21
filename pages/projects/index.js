@@ -7,7 +7,7 @@ import { getAllEntries } from '../../lib/content'
 const Projects = ({ entries }) => (
   <Container>
     <Seo title="Projects" description="Projects by Ayoub Aitcheikhahmed" path="/projects" />
-    <Heading mt={{ base: 4, md: 0 }} as="h3" fontSize={20} mb={4}>
+    <Heading mt={{ base: 4, md: 0 }} as="h3" fontSize={24} mb={4}>
       Projects
     </Heading>
     <SimpleGrid columns={[1, 1, 1]} gap={6}>

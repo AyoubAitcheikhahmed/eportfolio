@@ -17,11 +17,11 @@ const EntryPage = ({ meta, source, basePath, showDate }) => (
       type={showDate ? 'article' : 'website'}
     />
     <Section>
-      <Heading as="h1" fontSize={28} mb={2}>
+      <Heading as="h1" fontSize={34} mb={2}>
         {meta.title}
         {meta.draft && ' (draft)'}
       </Heading>
-      <Text fontSize={14} mb={4} opacity={0.8}>
+      <Text fontSize={16} mb={4} opacity={0.8}>
         {showDate && `${meta.date} · ${meta.readingTime} min read`}
       </Text>
       {meta.tags.map(t => (
