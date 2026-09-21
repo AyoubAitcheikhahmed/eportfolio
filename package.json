@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "next dev -H 0.0.0.0",
+    "prebuild": "node scripts/generate-feeds.js",
     "build": "next build",
     "prettier": "prettier -write .",
     "lint": "next lint"
@@ -27,9 +28,14 @@
     "@emotion/react": "^11.7.1",
     "@emotion/styled": "^11.6.0",
     "framer-motion": "^6.2.6",
+    "gray-matter": "^4.0.3",
+    "highlight.js": "^11.12.0",
     "next": "^12.3.4",
+    "next-mdx-remote": "^4.4.1",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "rehype-highlight": "^6.0.0",
+    "remark-gfm": "^3.0.1"
   },
   "devDependencies": {
     "eslint": "^8.9.0",

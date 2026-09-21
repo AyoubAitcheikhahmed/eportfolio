@@ -1,0 +1,27 @@
+import { Container, Heading, SimpleGrid } from '@chakra-ui/react'
+import Section from '../../components/ui/section'
+import Card from '../../components/ui/card'
+import Seo from '../../components/layout/seo'
+import { getAllEntries } from '../../lib/content'
+
+const Blog = ({ entries }) => (
+  <Container>
+    <Seo title="Blog" description="Posts by Ayoub Aitcheikhahmed" path="/blog" />
+    <Heading mt={{ base: 4, md: 0 }} as="h3" fontSize={20} mb={4}>
+      Blog
+    </Heading>
+    <SimpleGrid columns={[1, 1, 1]} gap={6}>
+      {entries.map(e => (
+        <Section key={e.slug}>
+          <Card href={`/blog/${e.slug}`} title={e.draft ? `${e.title} (draft)` : e.title} cover={e.cover}>
+            {e.date} · {e.readingTime} min read — {e.description}
+          </Card>
+        </Section>
+      ))}
+    </SimpleGrid>
+  </Container>
+)
+
+export const getStaticProps = async () => ({ props: { entries: getAllEntries('blog') } })
+
+export default Blog

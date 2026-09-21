@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import Navbar from '../navbar.js'
+import Navbar from './nav.js'
 import { Box,Container } from '@chakra-ui/react'
 
 

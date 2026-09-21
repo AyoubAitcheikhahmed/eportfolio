@@ -1,8 +1,8 @@
 import { Box, Button, Container,Divider,Heading, Image, ListItem, UnorderedList, useColorModeValue} from "@chakra-ui/react"
-import Section from "../components/section"
-import Paragraph from "../components/paragraph"
+import Section from "../components/ui/section"
+import Paragraph from "../components/ui/paragraph"
 import { AtSignIcon } from "@chakra-ui/icons"
-import { BioSection,BioYear, WorkDetails,CompanyDetails,WorkTasks} from "../components/bio"
+import { BioSection,BioYear, WorkDetails,CompanyDetails,WorkTasks} from "../components/ui/bio"
 import NextLink from 'next/link'
 const  Page = () => {
 

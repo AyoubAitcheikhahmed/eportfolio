@@ -1,7 +1,8 @@
 import { ChakraProvider } from "@chakra-ui/react"
-import Layout from "../components/layout/main"
+import Layout from "../components/layout/layout"
 import theme from '../lib/theme'
 import { AnimatePresence } from "framer-motion"
+import 'highlight.js/styles/github-dark.css'
 
 const Website = ({Component, pageProps, router}) => {
     return (
