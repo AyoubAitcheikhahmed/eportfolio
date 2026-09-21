@@ -1,18 +1,19 @@
 {
   "profile": "As a motivated Java developer, I bring a strong drive and passion for software development. My critical thinking skills enable me to effectively analyse and solve technical challenges. With experience in Java and frameworks like Spring Boot, I have demonstrated my ability to tackle problems and implement valuable solutions. My enthusiasm for technology and eagerness to learn make me an excellent addition to your team, ready to contribute to successful projects and continuous improvements.",
   "education": [
-    { "year": "2025", "text": "Spring Professional Developer certification (VMware)." },
-    { "year": "2024", "text": "Graduated in Applied Computer Science (Toegepaste Informatica) at HoGent, 2019 - 2024." },
-    { "year": "2021", "text": "Completed Dutch as a second language at Ghent University (UGent)." }
+    {
+      "year": "2025",
+      "text": "Spring Professional Developer certification (VMware)."
+    },
+    {
+      "year": "2024",
+      "text": "Graduated in Applied Computer Science (Toegepaste Informatica) at HoGent, 2019 - 2024."
+    },
+    {
+      "year": "2021",
+      "text": "Completed Dutch as a second language at Ghent University (UGent)."
+    }
   ],
-  "skills": [
-    { "name": "Programming languages", "items": "Java, Kotlin, JavaScript, PHP, SQL, HTML, CSS, Python" },
-    { "name": "Frameworks", "items": "Spring Boot, Quarkus, Node.js, Express, React, Angular, Apache Camel, OAuth2" },
-    { "name": "Cloud and tools", "items": "AWS, Kubernetes, Docker, Terraform, GitHub, GitLab, CI/CD" },
-    { "name": "Databases", "items": "MongoDB, SQL" },
-    { "name": "Methodologies", "items": "REST, SOAP, Agile / Scrum" }
-  ],
-  "languages": "Arabic, French, English, Dutch",
   "work": [
     {
       "employer": "Sopra Steria",

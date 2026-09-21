@@ -95,23 +95,6 @@ const  Page = () => {
             ))}
         </Section>
 
-        <Section delay={0.3}>
-            <Heading as="h3" variant="section-title">
-                Skills
-            </Heading>
-            {resume.skills.map(s => (
-                <BioSection key={s.name}>
-                    <BioYear>{s.name}:</BioYear>
-                    {s.items}
-                </BioSection>
-            ))}
-            <BioSection>
-                <BioYear>Languages:</BioYear>
-                {resume.languages}
-            </BioSection>
-        </Section>
-
-
     </Container>
     )
 }
