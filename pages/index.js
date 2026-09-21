@@ -1,15 +1,10 @@
 import { Box, Button, Container,Divider,Heading, Image, ListItem, UnorderedList, useColorModeValue} from "@chakra-ui/react"
-import Head from "next/head"
 import Section from "../components/section"
 import Paragraph from "../components/paragraph"
 import { AtSignIcon } from "@chakra-ui/icons"
 import { BioSection,BioYear, WorkDetails,CompanyDetails,WorkTasks} from "../components/bio"
-import panther from "../public/images/panther_walk.gif"
 import NextLink from 'next/link'
 const  Page = () => {
-    const panther = "images/panther_navbar_2.gif";
-    const pantherIdle = `/images/panther_navbar_1.gif`
-    const pantherAttack = `/images/panther_navbar_2.gif`
 
     return (
     <Container>
@@ -72,7 +67,7 @@ const  Page = () => {
             </BioSection>
             <BioSection>
                 <BioYear>2015</BioYear>
-                Graduated of École de Technologie d'Agadir, Computer Engineering. 
+                Graduated of École de Technologie d&apos;Agadir, Computer Engineering. 
             </BioSection>
             <BioSection>
                 <BioYear>2019</BioYear>
@@ -95,7 +90,7 @@ const  Page = () => {
             <WorkTasks>
             <UnorderedList>
                     <ListItem>
-                        Managed the company's internal network and worked on the creation of a managment solution written
+                        Managed the company&apos;s internal network and worked on the creation of a managment solution written
                         with PHP, mySQL, and bootstrap.
                     </ListItem>
                     <ListItem>
@@ -113,7 +108,7 @@ const  Page = () => {
             <Divider/>
 
             <BioSection>
-                <BioYear>ProBuns's </BioYear><CompanyDetails>Agadir, Morocco -  July 2016 - December 2016</CompanyDetails>
+                <BioYear>ProBuns&apos;s </BioYear><CompanyDetails>Agadir, Morocco -  July 2016 - December 2016</CompanyDetails>
                 <WorkDetails>Programmer / IT helpdesk</WorkDetails>
             </BioSection>
             <WorkTasks>
