@@ -12,7 +12,8 @@ const MdxImage = ({ src, alt }) => (
       display="inline-block"
       maxW="100%"
       h="auto"
-      borderRadius="lg"
+      borderRadius="xl"
+      boxShadow="xl"
     />
     {alt && (
       <Box as="span" display="block" fontSize="sm" opacity={0.7} mt={2}>
