@@ -21,6 +21,7 @@ import  ThemeToggleButton  from './theme-toggle-button'
 const links = [
     { href: '/blog', label: 'Blog' },
     { href: '/projects', label: 'Projects' },
+    { href: '/thesis', label: 'Thesis' },
     { href: '/contact', label: 'Contact' }
 ]
 
