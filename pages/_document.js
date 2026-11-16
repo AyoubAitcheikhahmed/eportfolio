@@ -15,6 +15,8 @@ export default class Document extends NextDocument {
           <ColorModeScript initialColorMode={theme.config.initialColorMode} />
           <Main />
           <NextScript />
+          {/* Dino widget test: local booking app + test salon. Production: https://book.heydino.nl/widget.js */}
+          <script src="http://localhost:5180/widget.js" data-business="6af776080144d7309dbae3df" data-lang="en" async />
         </body>
       </Html>
     )
